@@ -36,33 +36,32 @@
 //1 - Quando o usuário clicar no botão de ver treier, devemos abrir a modal com o video do trailer.
 
     //- passo 1 - dar um jeito de pegar o elemento que representa o botçao na tela usando o js.
-
-    console.log(document.querySelector(".botao-trailer"))
     const botaoTrailer = document.querySelector(".botao-trailer");
+    const botaoFecharModal = document.querySelector(".fechar-modal");
+    
+    const video = document.getElementById("video");
+    const modal = document.querySelector(".modal");
+    console.log(video.src);
+    const linkDoVideo = video.src;
+    
 
-    //- passo 2 - identificar quando que o usuário clicou.
+
 
     botaoTrailer.addEventListener("click",() => {
         console.log("Clicou no Botão de ver o Trailer");
 
-        //- passo 4 - abrir a modal na tela
+
         modal.classList.add("aberto");
+        video.setAttribute("src", linkDoVideo);
 
 
     });
 
-    //- passo 3 - dar um jeito de pegar o elemento na modal do js
-    const modal = document.querySelector(".modal");
-    console.log(".modal"); 
 
 
+    botaoFecharModal.addEventListener("click", () => {
+        modal.classList.remove("aberto");
+        video.setAttribute("src" , "");
+        
+    });
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-// 2 - Quando o usupario clicar no x.... devemos fechar a modal.
-
-//  - passo 1 - dar um jeito de pegar o elemento que representa o botçao na tela usando o js.
-
-    const botaoFecharModal = document.querySelector(".fechar-modal");
-     console.log(botaoFecharModal);
